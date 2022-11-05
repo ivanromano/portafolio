@@ -3,11 +3,28 @@
 <main class=" bg-[#262535]">
   <nav class="grid grid-cols-8 gap-2 mx-3 py-4">
 
-    <RouterLink to="/" class="col-start-2 ml-4 px-3 py-2 rounded-md text-xl leading-5 text-gray-200 font-bold hover:bg-white hover:text-[#1E1E2A] transition duration-300 hover:translate-y-3 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 ">Portafolio 1</RouterLink>
-    <RouterLink to="/" class="ml-4 px-3 py-2 rounded-md text-xl leading-5 text-gray-200 font-bold hover:bg-white hover:text-[#1E1E2A] transition duration-300 hover:translate-y-3 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 ">Portafolio 2</RouterLink>
+    <AntDesplegable></AntDesplegable>
 
-    <RouterLink to="/" class="col-start-6 ml-4 px-3 py-2 rounded-md text-xl leading-5 text-gray-200 font-bold hover:bg-white hover:text-[#1E1E2A] transition duration-300 hover:translate-y-3 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 ">Portafolio 3</RouterLink>
-    <RouterLink to="/" class="ml-4 px-3 py-2 rounded-md text-xl leading-5 text-gray-200 font-bold hover:bg-white hover:text-[#1E1E2A] transition duration-300 hover:translate-y-3 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 ">Portafolio 4</RouterLink>
+    <a-tooltip title="primer portafolio" color="pink" placement="bottom" id="components-a-tooltip-demo-color">
+      <RouterLink to="/" class="col-start-2" :class="ColorNavlinks">Portafolio 1</RouterLink>
+    </a-tooltip>
+
+    <a-tooltip title="el segundo" color="blue" placement="bottom" id="components-a-tooltip-demo-color">
+      <RouterLink to="/" :class="ColorNavlinks">Portafolio 2</RouterLink>
+    </a-tooltip>
+
+    <a-tooltip title="el tercero" color="green" placement="bottom" id="components-a-tooltip-demo-color">
+      <RouterLink to="/" class="col-start-6" :class="ColorNavlinks">Portafolio 3</RouterLink>
+    </a-tooltip>
+
+    <a-tooltip title="el cuarto" color="lime" placement="bottom" id="components-a-tooltip-demo-color">
+      <RouterLink to="/" :class="ColorNavlinks">Portafolio 4</RouterLink>
+    </a-tooltip>
+
+
+
+
+
   </nav>
 
   <div class="pr-[500px]">
@@ -18,8 +35,9 @@
 
   <div class="bg-[#292D39] absolute -top-5 left-[520px] w-[328px] p-2 shadow-[0_10px_35px_-15px_rgba(0,0,0,1.9)]">
     <div>
-      <img src="https://furrycdn.org/img/download/2022/8/19/183484.png" class="max-h-[100px] mx-auto animate-loading" alt="">
-
+      <a-tooltip title="Victini is the Best Pokemon" color="blue" placement="bottom" id="components-a-tooltip-demo-color">
+        <img src="https://furrycdn.org/img/download/2022/8/19/183484.png" class="max-h-[100px] mx-auto animate-loading" alt="">
+      </a-tooltip>
     </div>
     <p class="text-red-100 text-center text-lg font-bold my-2">Victini Company</p>
   </div>
@@ -32,8 +50,9 @@
 
 <script setup>
 import { reactive, toRef, toRefs } from "vue";
+import AntDesplegable from "./components/AntDesplegable.vue";
 
-
+const ColorNavlinks = `ml-4 px-3 py-2 rounded-md text-xl leading-5 text-gray-200 font-bold hover:bg-white hover:text-[#1E1E2A] transition duration-300 hover:translate-y-3 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700`
 
 
 </script>

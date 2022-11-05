@@ -14,7 +14,7 @@ import { ref } from 'vue';
 
 const UsuarioStore = useUsuarioStore()
 
-const email = ref('poison@d.cm')
+const email = ref('poisonlogin@d.cm')
 const password = ref('azsxdcfvgb')
 
 const HandleSumbit = async() => {

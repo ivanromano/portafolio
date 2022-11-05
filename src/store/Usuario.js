@@ -31,7 +31,6 @@ export const useUsuarioStore = defineStore(`UsuarioStore`, {
 				const {user} = await signInWithEmailAndPassword(auth, email, password)
 				// actualizar el estado
 				this.userData = {email: user.email, uid: user.uid}
-				console.log(user);
 				router.push("/")
 			} catch (error) {
 				console.log(error);
@@ -52,7 +51,7 @@ export const useUsuarioStore = defineStore(`UsuarioStore`, {
 			}
 		},
 		// validacion de ruta
-		async CurrentUser(){
+		async currentUser(){
 			return new Promise((resolve, reject) => {
 				const unsuscribe = onAuthStateChanged(auth, (user) => {
 					if (user) {

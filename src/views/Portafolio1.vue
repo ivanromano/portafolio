@@ -1,20 +1,26 @@
 <template>
-	<main class="bg-[#8858ED] pt-11">
-		<div class="bg-[#6239ba] ml-[900px] p-5 mb-11 ">
-			<nav class="mt-[200px]">
-				<div v-if="mostrarRegisterVsLogin">
-					<Register > </Register>
-				</div>
 
-				<div v-if="!mostrarRegisterVsLogin">
-					<Login> </Login>
-				</div>
-			</nav>
-			<button @click="mostrarRegisterVsLogin = true" class="bg-red-400 rounded-md mr-[30px]">Registrarse</button>
-			<button @click="mostrarRegisterVsLogin = false" class="bg-green-400 rounded-md">Iniciar Sesion</button>
+	<main class="bg-[#8858ED] pt-11 h-[700px]">
+		<button>
+			RouterLink
+		</button>
+		<div class="absolute left-11 top-[210px]">
+			<Cartas > </Cartas>
+			<p>{{UsuarioStore.userData?.email}}</p>
 
+{{DataBase.documents}}
+			<ul >
+			<li v-for="item in DataBase.documents" :key="item.id">
+				{{ item.name }}
+			</li>
+		</ul>
 		</div>
-<Cartas> </Cartas>
+
+	<div >
+			<a-tooltip title="prompt text" color="#f50" placement="bottomRight" id="components-a-tooltip-demo-color">
+          <a-button>fdvf</a-button>
+        </a-tooltip>
+	</div>
 
 
 </main>
@@ -22,13 +28,13 @@
 
 <script setup>
 import Cartas from "../components/Cartas.vue";
-import Register from "../components/Register.vue";
-import Login from "../components/Login.vue";
+
 import { computed, reactive, toRefs } from "vue";
 import { useDataBase } from "../store/Database";
-
+import { useUsuarioStore } from "../store/Usuario";
 
 const DataBase = useDataBase()
+const UsuarioStore = useUsuarioStore()
 
 let state = reactive({
 	mostrarRegisterVsLogin: true,
@@ -43,5 +49,8 @@ DataBase.getUrls()
 </script>
 
 <style lang="scss" scoped>
-
+  #components-a-tooltip-demo-color .ant-btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
 </style>
